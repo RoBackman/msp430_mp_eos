@@ -25,10 +25,8 @@ void uart_init(void)
     //Remove UART from reset
     UCA0CTL1 &= ~UCSWRST;
 
-#ifndef MASTER
     //Enable USCI_A0 RX interrupt
     UC0IE |= UCA0RXIE;
-#endif
 }
 
 void uart_write_char(char byte)
